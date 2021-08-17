@@ -156,19 +156,31 @@ p a:hover {
     font-size: 20px;
 }
 
+
 .birth_childhood {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    border-right:dotted 4px tomato;   
 }
 
 .birth_childhood_image {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     justify-self: center;
-    
     padding-top: 20 px;
 
 }
 
+.bottom_border {
+    color:tomato;
+}
 
 
+.bottom_border:after {
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0px 0px 0px 50%; /* This will center the border. */
+    width: 50%; /* Change this to whatever width you want. */
+    padding-top: 5px; /* This creates some space between the element and the border. */
+    border-bottom: 4px dotted tomato; /* This creates the border. Replace black with whatever color you want. */
+}
