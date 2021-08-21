@@ -17,6 +17,7 @@
 .image_settings {
     display: block;
     width: 100%;
+    margin: 0 auto;
 }
 
 .nav_bar_child {
