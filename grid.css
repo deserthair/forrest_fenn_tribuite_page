@@ -1,6 +1,6 @@
 #nav_bar {
     display: grid;
-    grid-template-columns:repeat(6,auto);
+    grid-template-columns:repeat(autofit, minmax(280px, 1fr));
     grid-gap: 0px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -51,8 +51,9 @@
 
 .grid_main {
     display:grid;
-    grid-template-columns: repeat(3,600px);
-    grid-template-rows: repeat(3,310px);
+    grid-template-columns:repeat(autofit, minmax(280px, 1fr));
+    grid-template-rows:repeat(autofit, minmax(280px, 1fr));
+    align-items: center;
     justify-content:center;
     text-align:center;
     vertical-align:top;
@@ -111,8 +112,8 @@ p span {
 
 .article_grid {
     display:grid;
-    grid-template-columns: repeat(2,960px);
-    grid-template-rows: repeat(12, auto);
+    grid-template-columns:repeat(autofit, minmax(280px, 1fr));
+    grid-template-rows:repeat(autofit, minmax(280px, 1fr));
     color: black;
     background-image: url("./topomap.jpg");
     box-shadow: inset 0 0 0 1000px rgba(243, 243, 243, 0.883);
