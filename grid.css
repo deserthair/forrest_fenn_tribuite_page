@@ -80,7 +80,7 @@ p span {
 .grid_main_child_right {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
-    background-color: rgba(105, 102, 102, 0.438);
+    background-color: rgba(112, 70, 70, 0.438);
     font-size: 38px;
     color:white;
     border: 3px tomato dotted;
