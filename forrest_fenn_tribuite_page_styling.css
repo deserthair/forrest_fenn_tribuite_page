@@ -5,9 +5,11 @@
 body {
     line-height: 1.6;
 }
+
 img {
     display: block;
     max-width: 100%;
+    max-height: auto;
 }
 a {
     color: inherit;
@@ -29,7 +31,7 @@ a:hover {
     color: whitesmoke;
     text-align: center;
     align-content: center;
-    border-bottom: 3px tomato dotted;
+    border-bottom: .195vw tomato dotted;
     padding-top: .625em;
     padding-bottom: .625em;
 }
@@ -41,39 +43,43 @@ a:hover {
 }
 .top_section {
     display: grid;
-    grid-template-columns: repeat(12, auto);
-    grid-template-rows: repeat(8, auto);
+    max-width: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8,1fr);
 }
 
 .main_image, .tribute_box {
-    grid-row: 3 / 6;   
+    grid-row: 2 / 6;
 }
 
 .main_image {
     grid-column: 1 / 13;
     grid-row: 1 / 9;
 }
-.tribute_box {
-    grid-column: 10 / 12;
-    padding-left: 2em;
-    padding-right: 2em;
-    background-color: rgba(105, 102, 102, 0.438);
-    align-self: center;
-    border: 3px dotted tomato;
-    font-size:30px;
-    color: whitesmoke;
-    font-family: var(--main-header-font);
-    line-height: 1.6;
 
+.tribute_box {
+    display: grid;
+    grid-column: 9 / 12;
+    border: dotted tomato .195vw;
+    background-color: rgba(112, 70, 70, 0.438);
+    font-family: var(--main-header-font);
+    color: white;
+    font-size: 2vw;
+    justify-content: center;
+    align-items: center;
+    padding-top: .2em;
+    padding-bottom: 1.2em;
 }
 h1 {
-    line-height:.5;
+    line-height:.1vw;
 }
 .li_tribute_box_style {
-    font-size: 35px;
+    font-size: 3vw;
     list-style-type: none;
+    line-height: .1vw;
+    text-align: center;
 }
 .text_flourish {
     color:tomato;
-    font-size: 150%;
+    font-size: 4vw;
 }
