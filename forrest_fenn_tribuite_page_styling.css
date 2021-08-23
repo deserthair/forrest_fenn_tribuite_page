@@ -63,7 +63,7 @@ a:hover {
     border: dotted tomato .195vw;
     background-color: rgba(112, 70, 70, 0.438);
     font-family: var(--main-header-font);
-    color: white;
+    color: whitesmoke;
     font-size: 2vw;
     justify-content: center;
     align-items: center;
@@ -82,4 +82,18 @@ h1 {
 .text_flourish {
     color:tomato;
     font-size: 4vw;
+}
+#forrests_life {
+    display: flex;
+    background: rgba(0, 0, 0, 0.884);
+    border-top: tomato dotted .195vw;
+    border-bottom: tomato dotted .195vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+h2 {
+    color: whitesmoke;
+    font-family:var(--main-header-font);
+    font-size: 3vw;
 }
