@@ -24,7 +24,7 @@ a:hover {
 }
 .nav_section {
     display: grid;
-    grid-template-columns: repeat(7, auto);
+    grid-template-columns: repeat(7, 1fr);
     background-color: black;
     font-family: var(--main-header-font);
     font-size: 20px;
@@ -83,17 +83,58 @@ h1 {
     color:tomato;
     font-size: 4vw;
 }
+#books {
+    display: grid;
+    grid-template-columns: 50px, 500px;
+    grid-template-rows: 1fr;
+}
+
+.forrests_books {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.books_list {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
 #forrests_life {
-    display: flex;
-    background: rgba(0, 0, 0, 0.884);
-    border-top: tomato dotted .195vw;
-    border-bottom: tomato dotted .195vw;
+    display: grid;
+    border-top: black .5vw solid;
+    border-bottom: black .5vw solid;
     text-align: center;
     justify-content: center;
     align-items: center;
+    grid-template-rows: 6vw;
+    background-image: URL("papers.co-vo72-retro-red-blue-yellow-pattern-1920x1080.jpg");
+    box-shadow: inset 0 0 0 100vmax #55261e75;
+    margin: 0px;
 }
 h2 {
     color: whitesmoke;
     font-family:var(--main-header-font);
-    font-size: 3vw;
+    font-size: 5vw;
+    margin: 0;
+}
+
+
+.life_grid_split {
+    display: grid;
+    grid-template-rows: repeat (auto, 1fr);
+    grid-template-columns: repeat (2, 1fr);
+}
+.life_class:nth-child(odd) {
+    grid-column: 1 / 2;
+}
+.life_class:nth-child(even) {
+    grid-column: 2 / 3;
+}
+.main_background {
+    background-image: url("topomap.jpg");
+    box-shadow: inset 0 0 0 100vmax rgba(255, 255, 255, 0.781);
+    margin-bottom: 0vw;
+}
+h3 {
+    margin: 0;
 }
