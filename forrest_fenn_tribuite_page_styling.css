@@ -6,11 +6,7 @@ body {
     line-height: 1.6;
 }
 
-img {
-    display: block;
-    max-width: 100%;
-    max-height: auto;
-}
+
 a {
     color: inherit;
 }
@@ -20,35 +16,67 @@ a:link, a:visited, a:active {
 }
 a:hover {
     color:green;
-    font-size: 150%;
+    font-size: 140%;
+}
+@media screen and (max-width: 600px) {
+    a:hover {
+        color:green;
+        font-size: 100%;
+    }
+    
 }
 .nav_section {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    max-height: 1.5vw;
+    min-height: 1.5vw;
+    overflow: hidden;
     background-color: black;
     font-family: var(--main-header-font);
-    font-size: 20px;
+    font-size: calc(10px + .5vw);
     color: whitesmoke;
-    text-align: center;
-    align-content: center;
     border-bottom: .195vw tomato dotted;
     padding-top: .625em;
     padding-bottom: .625em;
 }
 .nav_child {
+    display: flex;
     border-right:1px solid whitesmoke;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+    max-height: 1.5vw;
+}
+.second_last_nav_child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-height: 1.5vw;
+
 }
 .last_nav {
+    display: flex;
     grid-column: 5 / 8;
+    align-items: center;
+    justify-self: center;    
+    max-height: 1.5vw;
 }
 .top_section {
     display: grid;
     max-width: 100%;
+    max-height: 90vh;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(8,1fr);
+    overflow: hidden;
+}
+img {
+    display: inline-block;
+    max-width: 100%;
+    max-height: auto;
 }
 
-.main_image, .tribute_box {
+.main_image{
     grid-row: 2 / 6;
 }
 
@@ -59,7 +87,9 @@ a:hover {
 
 .tribute_box {
     display: grid;
-    grid-column: 9 / 12;
+    overflow:inherit;
+    width: 20vw;
+    min-height: 20vw;
     border: dotted tomato .195vw;
     background-color: rgba(112, 70, 70, 0.438);
     font-family: var(--main-header-font);
@@ -68,20 +98,30 @@ a:hover {
     justify-content: center;
     align-items: center;
     padding-top: .2em;
-    padding-bottom: 1.2em;
-}
+    padding-bottom: .5em;
+    position: absolute;
+    right: 12vw;
+    top: 10vw;
+backdrop-filter: blur(.1vw);}
 h1 {
-    line-height:.1vw;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top: 0;
+    background-blend-mode: soft-light;
 }
 .li_tribute_box_style {
     font-size: 3vw;
     list-style-type: none;
-    line-height: .1vw;
     text-align: center;
 }
 .text_flourish {
+    font-family: var(--main-header-font);
     color:tomato;
+    list-style-type: none;
     font-size: 4vw;
+    line-height: .1vw;
+    text-align: center;
+    line-height: 5vw;
 }
 #books {
     display: grid;
