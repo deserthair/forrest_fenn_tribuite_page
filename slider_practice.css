@@ -1,0 +1,85 @@
+.slider_box {
+    width: 30vw;
+    height: 15vw;
+    margin: 4vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+.box_grid {
+    grid-row: 1 / 5;
+    grid-column: 1 / 5;
+    display: grid;
+    grid-template-columns: 1fr, repeat(4, .5fr), 1fr, 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    overflow: hidden;
+}
+input[type = "radio"] {
+    height: 1vw;
+    justify-self: center;
+    align-self: center;
+}
+#book_slide_1 {
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+#book_slide_2 {
+    grid-row: 4 / 5;
+    grid-column: 3 / 4;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+#book_slide_3 {
+    grid-row: 4 / 5;
+    grid-column: 4 / 5;
+    display: inline-block;
+    position: relative;
+    z-index: 3;
+}
+#book_slide_4 {
+    grid-row: 4 / 5;
+    grid-column: 5 / 6;
+    display: inline-block;
+    position: relative;
+    z-index: 4;
+}
+.book_card_1, .book_card_2, .book_card_3, .book_card_4 {
+    grid-column: 1 / 7;
+    grid-row: 1 / 4;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.book_card_1 {
+    background-color: tomato;
+    z-index: 4;
+}
+.book_card_2 {
+    background-color: violet;
+    z-index: 3;
+}
+.book_card_3 {
+    background-color: rgb(24, 182, 50);
+    z-index: 2;
+}
+.book_card_4 {
+    background-color: rgb(17, 46, 99);
+    z-index: 1;
+}
+#book_slide_1:checked ~ .book_card_1 {
+    z-index: 5;
+}
+#book_slide_2:checked ~ .book_card_2 {
+    z-index: 5;
+}
+#book_slide_3:checked ~ .book_card_3 {
+    z-index: 5;
+}
+#book_slide_4:checked ~ .book_card_4 {
+    z-index: 5;
+}

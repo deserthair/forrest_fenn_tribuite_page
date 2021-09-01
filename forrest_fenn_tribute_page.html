@@ -48,20 +48,29 @@
                 <div class="quote_1_image"><img src="bell-edited-2.png" alt="Cartoon image of a bell made by Forrest Fenn."></div>
                 <div class="quote_line_1_text"><mark>"if you should ever <text class="ff_flourish">think of me</text>, a thousand years from now,</mark></div>
                 <div class="quote_line_2_text"><mark>please <text class="ff_flourish">ring my bell</text> so I will know." <text class="ff_flourish">-FF</text></mark></div>
+                <!--The book slider section was greatly influnced from Anna Blok's example on codepen.io: https://codepen.io/anna_blok/pen/eYYRbQY*/-->
                 <div class="book_slider">
                     <div class="book_slider_box">
-                        <input type="radio" id="radio_1" name="book" value="book_1" checked="checked"><label for="book_1"></label></input>
-                        <input type="radio" id="radio_2" name="book" value="book_2"><label for="book_2"></label></input>
-                        <input type="radio" id="radio_3" name="book" value="book_3"><label for="book_3"></label></input>
-                        <input type="radio" id="radio_4" name="book" value="book_4"><label for="book_4"></label></input>
+                        <input type="radio" id="book_slide_1" name="book" value="book_1" checked="checked"><label for="book_1"></label></input>
+                        <input type="radio" id="book_slide_2" name="book" value="book_2"><label for="book_2"></label></input>
+                        <input type="radio" id="book_slide_3" name="book" value="book_3"><label for="book_3"></label></input>
+                        <input type="radio" id="book_slide_4" name="book" value="book_4"><label for="book_4"></label></input>
                         <div class="book_slide">
-                            <div class="inner">
-                                <div class="slide_1"></div>
-                                <div class="slide_2"></div>
-                                <div class="slide_3"></div>
-                                <div class="slide_4"></div>
+                            <div id="overflow">
+                                <div class="inner">
+                                    <div class="slide book_slide_1">Slide 1</div>
+                                    <div class="slide book_slide_2">Slide 2</div>
+                                    <div class="slide book_slide_3">Slide 3</div>
+                                    <div class="slide book_slide_4">Slide 4</div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div id="controls">
+                        <label for="book_slide_1"></label>
+                        <label for="book_slide_2"></label>
+                        <label for="book_slide_3"></label>
+                        <label for="book_slide_4"></label>
                     </div>
                 </div>
             </div>
