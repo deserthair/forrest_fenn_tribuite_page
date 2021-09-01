@@ -175,6 +175,35 @@ mark {
     align-content: left;
     color: white;
 }
+.book_slider {
+    grid-row: 3 / 8;
+    grid-column: 2 / 7;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);    
+    position: relative;
+    z-index: 4;
+}
+.book_slider_box {
+    grid-row: 1 / 5;
+    grid-column: 1 / 5;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);   
+    background-color: blanchedalmond;
+    border: solid black .2vw;
+    position:relative;
+    z-index: 5;
+    margin-bottom: 1vw;
+    margin-right: 2vw;
+    overflow: hidden;
+}
+.book_slide {
+    grid-row: 1 / 5;
+    grid-column: 1 / 5;
+    width: 100%;
+    overflow: hidden;
+}
 
 .book_card_1 {
     grid-column: 2 / 3;
