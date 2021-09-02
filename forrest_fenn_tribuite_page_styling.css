@@ -175,122 +175,88 @@ mark {
     align-content: left;
     color: white;
 }
-/* The book slider section was greatly influnced from Anna Blok's example on codepen.io: https://codepen.io/anna_blok/pen/eYYRbQY*/
-.book_slider {
-    grid-row: 3 / 8;
-    grid-column: 2 / 7;
+.books_grid {
+    grid-row: 4 / 10;
+    grid-column: 2 / 6;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);    
-    position: relative;
-    z-index: 4;
-}
-#overflow {
+    grid-template-columns: 1fr, repeat(4, .5fr), 1fr, 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    overflow: hidden;
     width: 100%;
-    overflow: hidden;
+    height: auto;
 }
-.book_slider_box {
-    grid-row: 1 / 5;
-    grid-column: 1 / 5;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);   
-    background-color: blanchedalmond;
-    border: solid black .2vw;
-    position:relative;
-    z-index: 5;
-    margin-bottom: 1vw;
-    margin-right: 2vw;
-    overflow: hidden;
+input[type = "radio"] {
+    height: 1vw;
+    justify-self: center;
+    align-self: center;
+    width: 2vw;
+    background-color: green;
 }
-/* .book_slider_box input { 
-    display: none;
-}*/
-.book_slide {
-    grid-row: 1 / 5;
-    grid-column: 1 / 5;
-    width: 100%;
-    overflow: hidden;
+#book_slide_1 {
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
+    display: inline-block;
     position: relative;
     z-index: 1;
 }
-#book_slide_1:checked ~ #slides .inner {
-    margin-left: 0;
- }
- #book_slide_2:checked ~ #slides .inner {
-    margin-left: -100%;
- }
- #book_slide_3:checked ~ #slides .inner {
-    margin-left: -200%;
- }
- #book_slide_4:checked ~ #slides .inner {
-    margin-left: -300%;
- }
- .book_slider .inner {
-    transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    width: 400%;
-    line-height: 0;
-    height: 300px;
- }
- .book_slider .slide {
-    width: 25%;
-    float:left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    color: #fff;
- }
- .book_slider .book_slide_1 {
-    background: #00171F;
- }
- .book_slider .book_slide_2 {
-    background: #003459;
- }
- .book_slider .book_slide_3 {
-    background: #007EA7;
- }
- .book_slider .book_slide_4 {
-    background: #00A8E8;
- }
- #controls {
-    grid-row: 2 / 3;
-    grid-column: 1 / 2; 
-    margin: -180px 0 0 0;
-    width: 100%;
-    height: 50px;
-    z-index: 3;
+#book_slide_2 {
+    grid-row: 4 / 5;
+    grid-column: 3 / 4;
+    display: inline-block;
     position: relative;
- }
- #controls label {
-    transition: opacity 0.2s ease-out;
-    display: none;
-    width: 50px;
-    height: 50px;
-    opacity: .4;
- }
- #controls label:hover {
-    opacity: 1;
- }
- #book_slide_1:checked ~ #controls label:nth-child(2),
- #book_slide_2:checked ~ #controls label:nth-child(3),
- #book_slide_3:checked ~ #controls label:nth-child(4),
- #book_slide_4:checked ~ #controls label:nth-child(1) {
-    background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
-    float:right;
-    margin: 0 -50px 0 0;
-    display: block;
- }
- #book_slide_1:checked ~ #controls label:nth-last-child(2),
- #book_slide_2:checked ~ #controls label:nth-last-child(3),
- #book_slide_3:checked ~ #controls label:nth-last-child(4),
- #book_slide_4:checked ~ #controls label:nth-last-child(1) {
-    background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
-    float:left;
-    margin: 0 0 0 -50px;
-    display: block;
- }
+    z-index: 2;
+}
+#book_slide_3 {
+    grid-row: 4 / 5;
+    grid-column: 4 / 5;
+    display: inline-block;
+    position: relative;
+    z-index: 3;
+}
+#book_slide_4 {
+    grid-row: 4 / 5;
+    grid-column: 5 / 6;
+    display: inline-block;
+    position: relative;
+    z-index: 4;
+}
+.book_card_1, .book_card_2, .book_card_3, .book_card_4 {
+    grid-column: 1 / 7;
+    grid-row: 1 / 4;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
 .book_card_1 {
+    background-color: tomato;
+    z-index: 4;
+}
+.book_card_2 {
+    background-color: violet;
+    z-index: 3;
+}
+.book_card_3 {
+    background-color: rgb(24, 182, 50);
+    z-index: 2;
+}
+.book_card_4 {
+    background-color: rgb(17, 46, 99);
+    z-index: 1;
+}
+#book_slide_1:checked ~ .book_card_1 {
+    z-index: 5;
+}
+#book_slide_2:checked ~ .book_card_2 {
+    z-index: 5;
+}
+#book_slide_3:checked ~ .book_card_3 {
+    z-index: 5;
+}
+#book_slide_4:checked ~ .book_card_4 {
+    z-index: 5;
+}
+.book_card_1_XYZ {
     grid-column: 2 / 3;
     grid-row: 4 / 8;
     display: grid;
@@ -360,15 +326,7 @@ mark {
     align-content: center;
     text-align: center;
 }
-.book_card_2 {
-    grid-column: 2 / 3;
-}
-.book_card_3 {
-    grid-column: 3 / 4;
-}
-.book_card_4 {
-    grid-column: 4 / 5;
-}
+
 #forrests_life {
     display: grid;
     border-top: black .5vw solid;
