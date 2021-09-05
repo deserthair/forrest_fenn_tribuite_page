@@ -1,10 +1,10 @@
 <!-- 
--Give a max and min on page size, view port
--Enable smooth scrolling
--Fix nav bar font to be larger
+-Give a max and min on page size, view port CHECKED
+-Enable smooth scrolling CHECKED
+-Fix nav bar font to be larger CHECKED
 -Fix nav bar to swtitch to a menu for responsive mode
--Fix Fenns face in the image
--Make sure that the tribute box does not move on scroll
+-Fix Fenns face in the image 
+-Make sure that the tribute box does not move on scroll CHECKED
 -Redo cards box to go from flex to grid
 -Make books section responsive (grid) when too small
 -Create a basic grid to flex time line.  Generic card with date and description, expands when opened.
@@ -29,31 +29,29 @@
     <link rel="stylesheet" href="forrest_fenn_tribuite_page_styling.css">
 </head>
 <body>
-    <section>
-        <div class="container">
-            <nav class="nav_section">
+    <header>
+        <nav>
+            <li class="nav_items">
                 <a class="nav_child" href="#books">Books</a>               
                 <a class="nav_child" href="#forrests_life">Forrest's Life</a>
                 <a class="nav_child" href="#treasure_hunt">Treasure Hunt</a>
-                <a class="second_last_nav_child" href="#news_articles">News Articles</a>
-                <text class="last_nav">Forrest Fenn 1930-2020</text>
-            </nav>
-        </div>
-    </section>
-    <section>
-        <div class="container">
-            <div class="top_section">
-                <div class="main_image">
-                    <img src="the_myth_2.png" alt="Forrest Fenn posing for picture in office with a brown hat and looking off into the distance."> 
-                </div>
-                <div class="tribute_box"><h1>A <text class="text_flourish">Tribute</text> To:</h1>
-                    <li class="li_tribute_box_style">The <text class="text_flourish">Man</text></li>
-                    <li class="li_tribute_box_style">The <text class="text_flourish">Myth</text></li>
-                    <li class="li_tribute_box_style">The <text class="text_flourish">Legend</text></li>
-                </div>
+                <a class="last_nav_child" href="#news_articles">News Articles</a>
+                <span class="ff_header">Forrest Fenn 1930-2020</span>
+            </li>
+        </nav>
+        <picture class="top_image">
+            <div class="main_image">
+                <img src="the_myth_2.png" alt="Forrest Fenn posing for picture in office with a brown hat and looking off 
+                    into the distance."> 
             </div>
-        </div>
-    </section>
+            <div class="tribute_box">
+                <h1>A <text class="text_flourish">Tribute</text> To:</h1>
+                <li class="li_tribute_box_style">The <text class="text_flourish">Man</text></li>
+                <li class="li_tribute_box_style">The <text class="text_flourish">Myth</text></li>
+                <li class="li_tribute_box_style">The <text class="text_flourish">Legend</text></li>
+            </div>
+        </picture>
+    </header>
     <section>
         <div class="container" id="books">
             <div class="books_container">
