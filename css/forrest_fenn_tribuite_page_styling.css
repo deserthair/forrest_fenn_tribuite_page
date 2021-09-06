@@ -61,13 +61,13 @@ a:link, a:visited, a:active {
     background-color: black;
     border-bottom: .195vw tomato dotted;
 }
-.nav_menu_container {
+.nav_items {
     display: none;
 }
 .nav_menu_container input[type="checkbox"] {
     visibility: hidden;
 }
-.nav_items {
+.nav_section {
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: 1fr;
@@ -106,10 +106,14 @@ a:link, a:visited, a:active {
         position: relative;
         width: 100%;
         height: 0;
-        max-height: 10vh;
-        padding-bottom: 13%;
+        max-height: 15vh;
+        padding-bottom: 15%;
         translate: (1, 1);
         padding-top: 1%;
+        overflow: visible;
+    }
+    .nav_section {
+        display: none;
     }
     .nav_items {
         display: none;
@@ -120,8 +124,6 @@ a:link, a:visited, a:active {
         grid-template-rows: 1fr;
         background-color: rgba(0, 0, 0, 0.315);
         backdrop-filter: blur(2px);
-        height: auto;
-        width: 100%;
         overflow: visible;
     }
     .ff_header {
@@ -131,7 +133,7 @@ a:link, a:visited, a:active {
         align-self: center;
         font-size: 7vw;
     }
-    .nav_menu_label, .nav_child, .last_nav_child {
+    .nav_menu_label {
         grid-row: 1;
         grid-column:1 / 4;
     }
@@ -154,35 +156,52 @@ a:link, a:visited, a:active {
     .nav_menu_container input[type="checkbox"] {
         visibility: hidden;
     }
-    .nav_menu_container:hover input + label{
+    .nav_menu_label:hover {
         background-image: url(/svg/menu_icon_green.svg);
     }
-    .nav_menu_container input[type="checkbox"]:checked + label {
+    .nav_menu_container input[type="checkbox"]:checked + .nav_menu_label {
         background-image: url(/svg/x_red.svg);
     }
-    .nav_menu_container:hover input:checked + label{
+    .nav_menu_container input[type="checkbox"]:checked:hover + .nav_menu_label{
         background-image: url(/svg/x_green.svg);
     }
-    #nav_menu_checkbox:checked ~ .nav_child {
+    #nav_menu_checkbox:checked ~ .nav_items {
         display: flex;
         position: absolute;
-        top:18vh;
-        left: 10vw;
+        flex-flow: column;
         width: auto;
         height: auto;
-        background-color: red;
-        font-size: 10vw;
-        overflow: visible;
-        z-index: 5;
-    /* Make checked property for nav items to be the drop-down menu for the nav_children */
+        background-color:tomato;
+        border: dotted whitesmoke 2px;
+        top: 5vh; 
+        left: 10vw;
+        overflow:visible;
+        z-index: 100;
     }
-} 
+    .nav_items > * {
+        display: inline-block;
+        font-size: 5vw;
+        text-align: center;
+        border-bottom: whitesmoke solid 2px;
+        z-index: 101;
+    }
+    .last_nav_child {
+        border-bottom: none;
+    }
+    .nav_child:hover, .last_nav_child:hover {
+        font-size: 5vw;
+        color: green;
+        background-color: whitesmoke;
+        text-decoration: none;
+    }
+}
 .top_image {
     display: inline-block;
     position: relative;
     width: 100%;
     max-height: 90vh;
-    overflow: hidden;
+    overflow: visible;
+    z-index: -1;
 }
 .main_image{
     display: inline-block;
