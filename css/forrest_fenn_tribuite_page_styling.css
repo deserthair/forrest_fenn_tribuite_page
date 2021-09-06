@@ -50,19 +50,23 @@ a:link, a:visited, a:active {
     text-decoration: none;
     color: none;
 }
+/* NAV SECTION */
 .nav_container {
     display: block;
     position: relative;
     height: 0;
     padding-bottom: 3.5%;
+    max-height: .5vh;
     transform:translate(1,1);
     background-color: black;
     border-bottom: .195vw tomato dotted;
     overflow: hidden;
-    max-height: .5vh;
 }
-#nav_menu_container {
+.nav_menu_container {
     display: none;
+}
+.nav_menu_container input[type="checkbox"] {
+    visibility: hidden;
 }
 .nav_items {
     display: grid;
@@ -90,33 +94,79 @@ a:link, a:visited, a:active {
     grid-column: 5 / 8;
 }
 .nav_child:hover, .last_nav_child:hover {
-    color:green;
+    color:#008000;
     text-decoration: underline;
-    text-decoration-color: tomato;
+    text-decoration-color: #ff6347;
     text-decoration-thickness: .2vh;
     font-size: calc(2.5vw + 2%);
     align-items: center;
     transition:ease-in-out .25s;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 900px) {
     .nav_container {
+        display: block;
+        position: relative;
         width: 100%;
-        padding-bottom: 20vh;
+        height: 0;
+        max-height: 10vh;
+        padding-bottom: 13%;
+        translate: (1, 1);
+        padding-top: 1%;
     }
     .nav_items {
         display: none;
     }
     .nav_menu_container {
+        display: grid;
+        grid-template-columns:1fr, 3fr;
+        grid-template-rows: 1fr;
+        background-color: rgba(0, 0, 0, 0.315);
+        backdrop-filter: blur(2px);
+        height: auto;
+        width: 100%;
     }
-    .nav_menu_container label {
-        display: inline-block;
-        position: relative;
-        width: 4vw;
-        height: 4vw;
-        text-align: center;
-        background-color: rgb(160, 135, 135);
-        margin-left: 8vw;
-    }  
+    .ff_header {
+        grid-column: 4 / 9;
+        width: 50vw;
+        max-height: 10vw;
+        align-self: center;
+        font-size: 7vw;
+    }
+    .nav_menu_label, .nav_child, .last_nav_child {
+        grid-row: 1;
+        grid-column:1 / 4;
+    }
+    .nav_child, .last_nav_child {
+        display: none;
+        border-right: none;
+        max-height: 8vh;
+    }
+    .nav_menu_label {
+        display: grid;
+        grid-column-start: 1;
+        align-self: center;
+        width: 6vw;
+        height: 6vw;
+        background-image: url(/svg/menu_icon_red.svg);
+        background-repeat: no-repeat;
+        margin-left: 5vw;
+        margin-top: 2vw;
+    }
+    .nav_menu_container input[type="checkbox"] {
+        visibility: hidden;
+    }
+    .nav_menu_container:hover input + label{
+        background-image: url(/svg/menu_icon_green.svg);
+    }
+    .nav_menu_container input[type="checkbox"]:checked + label {
+        background-image: url(/svg/x_red.svg);
+    }
+    .nav_menu_container:hover input:checked + label{
+        background-image: url(/svg/x_green.svg);
+    }
+    #nav_menu_checkbox:checked ~ .nav_child {
+        display: block;
+    }
 } 
 .top_image {
     display: inline-block;
