@@ -54,8 +54,9 @@ a:link, a:visited, a:active {
 .nav_container {
     display: block;
     position: relative;
+    width: 100%;
     height: 0;
-    padding-bottom: 3.5%;
+    padding-bottom: 4.5%;
     max-height: .5vh;
     transform:translate(1,1);
     background-color: black;
@@ -73,41 +74,56 @@ a:link, a:visited, a:active {
 /* FIX header nav for large screen */
 .nav_section {
     display: grid;
-    position: relative;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: 4fr, 2fr;
     grid-template-rows: 1fr;
     width: 100%;
+    align-items: start;
 }
 .nav_items {
-    grid-column: 1 / 5;
-    display: block;
-    position: relative;
+    grid-column: 1 / 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: column;
     font-family: var(--main-header-font);
     margin-left: 1vw;
     padding-top: .4%;
     padding-bottom: 3%;
+    max-height: 2vw;
+    overflow: hidden;
 }
+.nav_child:nth-child() {
+    grid-column: 1 / 5;
+    grid-row-start: 1;
+}
+
 .nav_child, .last_nav_child {
-    grid-column: 1 / 5;    
     color: whitesmoke;
     font-size: calc(1.6vw + 2%);
-    justify-content: center;
     max-height: 2.5vw;
-}
-.nav_child {
     border-right: .1vw solid whitesmoke;
+    text-align: center;
+}
+.last_nav_child {
+    grid-column: 4 / 5;
+    border-right: none;
 }
 .ff_header {
-    grid-column: 5 / 7;
+    grid-column: 2 / 3;
+    font-family: var(--main-header-font);
+    color: whitesmoke;
+    font-size: calc(1.6vw + 2%);
+    max-height: 2.5vw;
+    text-align: center;
 }
 .nav_child:hover, .last_nav_child:hover {
     color:#008000;
     text-decoration: underline;
     text-decoration-color: #ff6347;
     text-decoration-thickness: .2vh;
-    font-size: calc(2.5vw + 2%);
-    align-items: center;
+    transform: scaleY(1.5);
     transition:ease-in-out .25s;
+    transform-origin: (50%); 
 }
 @media screen and (max-width: 900px) {
     .nav_container {
