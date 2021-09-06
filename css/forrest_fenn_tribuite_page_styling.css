@@ -60,7 +60,6 @@ a:link, a:visited, a:active {
     transform:translate(1,1);
     background-color: black;
     border-bottom: .195vw tomato dotted;
-    overflow: hidden;
 }
 .nav_menu_container {
     display: none;
@@ -84,7 +83,6 @@ a:link, a:visited, a:active {
     color: whitesmoke;
     font-size: calc(1.6vw + 2%);
     justify-content: center;
-    overflow: hidden;
     max-height: 2.5vw;
 }
 .nav_child {
@@ -124,6 +122,7 @@ a:link, a:visited, a:active {
         backdrop-filter: blur(2px);
         height: auto;
         width: 100%;
+        overflow: visible;
     }
     .ff_header {
         grid-column: 4 / 9;
@@ -142,7 +141,6 @@ a:link, a:visited, a:active {
         max-height: 8vh;
     }
     .nav_menu_label {
-        display: grid;
         grid-column-start: 1;
         align-self: center;
         width: 6vw;
@@ -151,6 +149,7 @@ a:link, a:visited, a:active {
         background-repeat: no-repeat;
         margin-left: 5vw;
         margin-top: 2vw;
+        overflow: visible;
     }
     .nav_menu_container input[type="checkbox"] {
         visibility: hidden;
@@ -165,7 +164,17 @@ a:link, a:visited, a:active {
         background-image: url(/svg/x_green.svg);
     }
     #nav_menu_checkbox:checked ~ .nav_child {
-        display: block;
+        display: flex;
+        position: absolute;
+        top:18vh;
+        left: 10vw;
+        width: auto;
+        height: auto;
+        background-color: red;
+        font-size: 10vw;
+        overflow: visible;
+        z-index: 5;
+    /* Make checked property for nav items to be the drop-down menu for the nav_children */
     }
 } 
 .top_image {
