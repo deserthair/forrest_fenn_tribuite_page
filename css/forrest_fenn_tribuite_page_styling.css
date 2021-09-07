@@ -220,12 +220,13 @@ a:link, a:visited, a:active {
         transform: none;
     }
 }
+/* Main image section/Tribute image */
 .top_image {
     display: inline-block;
     position: relative;
     width: 100%;
     max-height: 90vh;
-    overflow: visible;
+    overflow: hidden;
     z-index: -1;
 }
 .main_image{
@@ -269,6 +270,19 @@ a:link, a:visited, a:active {
     text-align: center;
     line-height: 5vw;
 }
+@media screen and (max-width: 900px) {
+    .top_image {
+        overflow: hidden;
+    }
+    .main_image{
+        transform: scale(3) translateX(3%) translateY(30%);
+    }
+    .tribute_box{
+        transform: scale(1.5) translateX(190%) translateY(-130%);
+    }
+}
+    
+/* Books section */
 .ff_flourish {
     color: tomato;
 }
