@@ -288,24 +288,25 @@ a:link, a:visited, a:active {
 }
 .books_container {
     display: grid;
-    grid-template-rows: repeat(4, .5fr), repeat(8, 1fr);
+    grid-template-rows: repeat(4, .5fr), repeat(3, 1fr);
     grid-template-columns: repeat(5, 1fr);
     overflow: hidden;
     background-color: white;
     padding-right: 2vw;
 }
 .quote_1_image {
-    grid-row: 3 / 12;
-    grid-column: 1 / 3;
+    grid-row: 4 / 8;
+    grid-column: 4 / 7;
     overflow: hidden;
     z-index: 1;
 }
 .quote_1_image img {
     width: 80%;
     overflow: hidden;
-    transform: rotate(-15deg);
+    transform: rotate(15deg);
     margin-left: -2vw;
     margin-top:-1vw;
+    padding-left: 15%;
 }
 mark {
     background-color: rgb(26, 21, 21);
@@ -340,17 +341,16 @@ mark {
     margin-top: 1vw;
 }
 .books_grid {
-    grid-row: 4 / 12;
-    grid-column: 2 / 6;
+    grid-row: 4 / 5;
+    grid-column: 1 / 4;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     overflow: hidden;
     width: 100%;
     height: auto;
 }
 .books_grid label {
-    display: inline-block;
     width: 3vw;
     height: 3vw;
     background-image: url("/svg/Bell_Icon.svg");
@@ -358,16 +358,6 @@ mark {
     background-repeat: no-repeat;
     justify-self: center;
     align-self: center;
-}
-.forrest_author {
-    grid-row: 7 / 8;
-    grid-column: 5 / 9;
-    display:inline-block;
-    justify-self: center;
-    align-self: center;
-    position: relative;
-    font-size: 3vw;
-    font-family: var(--main-header-font);
 }
 .books_grid input[type="radio"]:checked + label {
     width: 4vw;
@@ -390,126 +380,75 @@ mark {
     100% {transform: rotate(-20deg);}
 }
 .radio_book_1 {
-    grid-row: 6 / 7;
-    grid-column: 5 / 6;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
+    grid-row: 4 / 5;
+    grid-column: 3 / 4;
 }
 .radio_book_2 {
-    grid-row: 6 / 7;
-    grid-column: 6 / 7;
-    display: inline-block;
-    position: relative;
-    z-index: 2;
+    grid-row: 4 / 5;
+    grid-column: 4 / 5;
 }
 .radio_book_3 {
-    grid-row: 6 / 7;
-    grid-column: 7 / 8;
-    display: inline-block;
-    position: relative;
-    z-index: 3;
+    grid-row: 4 / 5;
+    grid-column: 5 / 6;
 }
 .radio_book_4 {
-    grid-row: 6 / 7;
-    grid-column: 8 / 9;
-    display: inline-block;
-    position: relative;
-    z-index: 4;
+    grid-row: 4 / 5;
+    grid-column: 6 / 7;
 }
 #book_slide_1:checked ~ .book_card_1 {
+    visibility: visible;
     z-index: 1;
 }
 #book_slide_2:checked ~ .book_card_2 {
+    visibility: visible;
     z-index: 1;
 }
 #book_slide_3:checked ~ .book_card_3 {
+    visibility: visible;
     z-index: 1;
 }
 #book_slide_4:checked ~ .book_card_4 {
+    visibility: visible;
     z-index: 1;
 }
 .book_card_1, .book_card_2, .book_card_3, .book_card_4 {
-    grid-column: 2 / 12;
-    grid-row: 1 / 6;
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    width: 100%;
-    height: auto;
-    flex-wrap: wrap;
-    justify-items: center;
-    align-items: center;
-    box-sizing: border-box;
-    isolation: isolate;
-}
-.book_card_1::before, .book_card_2::before, .book_card_3::before, .book_card_4::before {
-    content: "";
-    display: flex;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    box-sizing:border-box;
-    background-color: rgba(0, 0, 0, 0.733);
-    backdrop-filter: blur(5px);   
-    font-family: var(--main-header-font);
-    font-size: 3vw;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;    
-    transition: ease-in .5s;
-}
-.book_card_1:hover::before, .book_card_2:hover::before, .book_card_3:hover::before, .book_card_4:hover::before {
-    transition: ease-out .5s;
-    opacity: 0;
-    z-index: -1;
-}
-.book_card_1::before {
-    content:"The Thrill of the Chase";
+    grid-column: 1 / 9;
+    grid-row: 1 / 4;
+    display: grid;
+    grid-template-columns:repeat(8, 1fr) ;
+    grid-template-rows:1fr, 1fr, .5fr;
+    padding-left: 5%;
+    visibility: hidden;
 }
 .book_card_1 {
-    background: rgba(251, 255, 251, 0.719);
-    background-image: url("/photos/southwest-region-map.jpg");
-    background-blend-mode:screen;
-    background-repeat: no-repeat;
-    background-size: cover;
     z-index: 0;
 }
-
 .book_image_1 {
-    display: inline-block;
-    position: relative;
-    flex-grow: 1;
-    width: 15vw;
-    height: auto;
-    overflow: hidden;
-    padding-left: 2vw;
+    grid-column: 1 / 4;
+    grid-row: 1 / 3;
+    justify-self: center;
 }
-.book_image_1::before {
-    content:"";
-    display:inline-block;
-    position: absolute;
-    width: 12vw;
-    height: 20vw;
-    margin-top: 1vh;
-    margin-left: -1vw;
-
-    background-color: rgba(0, 0, 0, 0.705);
-    backdrop-filter: blur(2px);
-    z-index: -1;
+.book_image_1 img {
+    width: 18vw;
+    height: auto;
+}
+.book_title {
+    grid-column: 5 / 8;
+    grid-row: 1 / 2;
+    display: grid;
+    align-content: center;
+    font-family:"Dreamwalker";
+    color: black;
+    font-size: 3.5vw;
+    text-align: center;
 }
 .book_details_1 {
-    display: inline-block;
-    position: relative;
-    width: 40vw;
-    flex-grow: 3;
-    flex-shrink: 5;
+    grid-column: 4 / 9;
+    grid-row: 2 / 3;
     font-family:"Dreamwalker";
     color: black;
     font-size: 2vw;
-    padding: 2vw;
-    padding-bottom: 5vw;
+    padding-left: 8%;
 }
 .book_details_1::before {
     content:open-quote;
@@ -531,24 +470,21 @@ mark {
     margin-top: -2vw;
     margin-left: -.75vw;
 }
-.order_button_1 {
-    display: flex;
-    position: absolute;
-    width: 15vw;
-    height: 8vh;
-    font-family: "Dreamwalker";
-    border-bottom: tomato solid 1vw;
+.learn_more_1 {
+    grid-row: 3 / 4;
+    grid-column: 5 / 8;
     font-size: 3vw;
-    flex-shrink: -2;
-    justify-content: center;
+    font-family: "Dreamwalker";
     color: Black;
-    margin-left: 9vw;
-    margin-top: 3vh;
+    text-align: center;
+    margin-top: -3%;
 }
-.order_button_1:hover {
-    border-bottom: rgb(0, 4, 255) solid 1vw;
-    color: black;
+a.learn_more_1 {
+    text-decoration: underline dotted tomato;   
+}
+a.learn_more_1:hover{
     transform: scale(1.2,1.2);
+    text-decoration-color: green;
 }
 .book_card_2 {
     background-color: violet;
