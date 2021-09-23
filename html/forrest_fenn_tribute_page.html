@@ -1,9 +1,6 @@
 <!-- 
 -Fix max width/stretch
--Redo cards box to go from flex to grid
--Make books section responsive (grid) when too small
 -Create a basic grid to flex time line.  Generic card with date and description, expands when opened.
--Figure out backgroud for timeline section.
 -Column flex grid for news articles.
 -Create a footer linking to my site.
  -->
@@ -72,15 +69,35 @@
                         <label for="book_slide_4" class="radio_book_4"></label>
                     <div class="book_card_1">
                         <div class="book_title">The Thrill of the Chase</div>
-                        <div class="book_image_1"><img src="/photos/thrill_of_the_chase.jpg" alt="Picture of the 
+                        <div class="book_image"><img src="/photos/thrill_of_the_chase.jpg" alt="Picture of the 
                             book the Thrill of the chase by Forrest Fenn."></div>
-                        <div class="book_details_1">I wrote a poem containing nine clues that if followed 
+                        <div class="book_details">I wrote a poem containing nine clues that if followed 
                             precisely, will lead to the end of my rainbow and the treasure.</div>
-                        <a class="learn_more_1" href="https://www.oldsantafetradingco.com/store">Learn More</a>
+                        <a class="learn_more" href="https://www.oldsantafetradingco.com/store">Learn More</a>
                     </div>
-                    <div class="book_card_2">Test 2</div>
-                    <div class="book_card_3">Test 3</div>
-                    <div class="book_card_4">Test 4</div>
+                    <div class="book_card_2">
+                        <div class="book_title">Too Far To Walk</div>
+                        <div class="book_image"><img src="/photos/too_far_to_walk.png" alt="Picture of the 
+                            book the Too Far To Walk by Forrest Fenn."></div>
+                        <div class="book_details">From being shot down in Laos to meeting a prehistoric family
+                            it's all here in untainted color.</div>
+                        <a class="learn_more" href="https://www.oldsantafetradingco.com/products/too-far-to-walk">Learn More</a>
+                    </div>
+                    <div class="book_card_3">
+                        <div class="book_title">Once Upon A While</div>
+                        <div class="book_image"><img src="/photos/once_upon_a_while.jpg" alt="Picture of the 
+                            book Once Upon A While by Forrest Fenn."></div>
+                        <div class="book_details">Stories from jumping off a terrifying bridge as a teenager, riding a fast horse 
+                            through mountain passes and nearly everything else in-between is included in this beautiful new volume.</div>
+                        <a class="learn_more" href="https://www.oldsantafetradingco.com/products/once-upon-a-while">Learn More</a>
+                    </div>
+                    <div class="book_card_4">
+                        <div class="book_title">More Books From Forrest</div>
+                        <div class="book_image"><img src="/photos/san_lazaro_book.png" alt="Picture of the 
+                            book Once Upon A While by Forrest Fenn."></div>
+                        <div class="book_details">For more books written by Forrest visit his site.</div>
+                        <a class="learn_more" href="https://www.oldsantafetradingco.com/store">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -88,15 +105,17 @@
     <section>
         <div class="container">
             <div id="forrests_life">
-                <h2>~ Forrest's Life ~</h2>
+                <h2>Forrest's Life</h2>
             </div>
         </div>
         <div class="container main_background">
-            <div class="life_grid_split">
-                <div class="life_class">
-                    <h3>Birth & Childhood</h3>
-                    <p>Forrest was born in Temple, Texas in 1930.</p>
-                    <p>Forrest was a son of school principal. Problem was, Forrest did not have the
+            <div class="life_grid">
+                <div class="life_grid_card">
+                    <div class="life_grid_pic"><img src="/photos/once_upon_a_while.jpg" alt="not sure"> </div>
+                    <div class="life_grid_title">Birth & Childhood</div>
+                    <div class="life_grid_blur"></div>
+                    <div class="life_grid_description">Forrest was born in Temple, Texas in 1930.
+                        Forrest was a son of school principal. Problem was, Forrest did not have the
                         same passion for academics
                         as his father did. Forrest did, however, share the same passion with his father in enjoying
                         the great
@@ -106,13 +125,13 @@
                         in Little Elm
                         Creek, Texas. According to Forrest, “It was a thrill that started me on a long journey of
                         adventure and
-                        discovery.”</p>
-                    <p>Source:<a href="https://www.oldsantafetradingco.com/">https://www.oldsantafetradingco.com/</a></p>
+                        discovery.”
+                        <p>Source:<a href="https://www.oldsantafetradingco.com/">https://www.oldsantafetradingco.com/</a></p>
+                    </div>
                 </div>
-                <div class="life_class"><img src="/photos/fenn_studying.jpg" alt="Test Image."></div>
-                <div class="life_class"><img src="/photos/fenn_studying.jpg" alt="Test Image."></div>
                 <div class="life_class">
-                    <h4>Summer Vacations</h4>
+                    <div class="life_grid_pic"></div>
+                    <div class="life_grid_title">Summer Vacations</div>
                     <p>Forrest’s family would go up to Yellowstone during the three-month break from school where they would do
                         all sorts of outdoor activities. By the age of 13, Forrest was a professional fishing guide.</p>
                 </div>        
