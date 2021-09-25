@@ -1,14 +1,8 @@
 :root {
-    --main-fancy-font: 'Amatic SC', cursive;
+    --main-header-font: 'Amatic SC', cursive;
     --comp-font: 'Josefin Sans', sans-serif;
-    --book-font: "Dreamwalker", 'Amatic SC';
-    --xl-font: clamp(3.5rem, 6vw + 1rem, 8rem);
-    --lg-font: clamp(3rem, 5vw + 1rem, 7rem);
-    --mlg-font: clamp(2.5rem, 4vw + 1rem, 6rem);
-    --m-font: clamp(2rem, 3vw + 1rem, 5rem);
-    --ms-font: clamp(1.5rem, 2vw + 1rem, 4rem);
-    --sm-font: clamp(.5rem, 1.2vw + 1rem, 3rem);
-    --xs-font: clamp(.25rem, .75vw + 1rem, 2rem);
+    --sm-font: clamp(1rem, 1.5vw + .5rem, 2.5rem);
+    --med-font: clamp(2rem, 2vw + 1.5rem, 10rem);
 }
 html {
     scroll-behavior: smooth;
@@ -63,11 +57,11 @@ a:link, a:visited, a:active {
     display: block;
     position: relative;
     width: 100%;
-    height: clamp(.20rem, .3vh + .20rem, 1rem);
+    height: 0;
     padding-bottom: 4%;
     transform:translate(1,1);
     background-color: black;
-    border-bottom: .15rem tomato dotted;
+    border-bottom: .2rem tomato dotted;
 }
 .nav_items {
     display: none;
@@ -91,8 +85,8 @@ a:link, a:visited, a:active {
     display: grid;
     grid-template-columns: .75fr, repeat(3, 1fr);
     grid-auto-flow: column;
-    font-family: var(--main-fancy-font);
-    margin-left: 1vw;
+    font-family: var(--main-header-font);
+    margin-left: 1rem;
     padding-top: .5%;
     padding-left: 5%;
     overflow: hidden;
@@ -111,7 +105,7 @@ a:link, a:visited, a:active {
 }
 .ff_header {
     grid-column: 2 / 3;
-    font-family: var(--main-fancy-font);
+    font-family: var(--main-header-font);
     color: whitesmoke;
     font-size: var(--sm-font);
     text-align: center;
@@ -122,12 +116,12 @@ a:link, a:visited, a:active {
     display: inline-block;
     position: relative;
     color: tomato;
-    padding-right: 1vw;
+    padding-right: 1rem;
     font-size: var(--sm-font);
 }
 .nav_child:hover, .last_nav_child:hover {
     color:#008000;
-    transform: scale(1.3) translateX(8%);
+    transform: scale(1.5) translateX(15%);
       
 
 }
@@ -137,11 +131,11 @@ a:link, a:visited, a:active {
         position: relative;
         width: 100%;
         height: 0;
-        max-height: 15vh;
         padding-bottom: 15%;
         translate: (1, 1);
         padding-top: 1%;
         overflow: visible;
+        border-bottom: .1rem dotted tomato;
     }
     .nav_section {
         display: none;
@@ -160,26 +154,26 @@ a:link, a:visited, a:active {
     .ff_header {
         grid-column: 7 / 9;
         justify-self: right;
-        font-size: var(--mlg-font);
-        padding-right: 5%;
-        padding-top: 4%;
+        font-size: var(--med-font);
+        padding-right: 3%;
     }
     .nav_menu_label {
-        grid-row: 1 / 2;
+        grid-row: 1;
         grid-column:1 / 4;
     }
     .nav_child, .last_nav_child {
         display: none;
+        border-right: none;
     }
     .nav_menu_label {
         grid-column-start: 1;
         align-self: center;
-        width: clamp(3rem, 6vw + 1rem, 8vw);
-        height: clamp(3rem, 6vw + 1rem, 8vw);
+        width: clamp(2rem, 4vw + 1rem, 5rem);
+        height: clamp(2rem, 4vw + 1rem, 5rem);
         background-image: url(/svg/menu_icon_red.svg);
         background-repeat: no-repeat;
-        margin-left: 2.75rem;
-        margin-top: 1rem;
+        margin-left: 5vw;
+        margin-top: clamp(.5rem, .5vw + 2rem, 3rem);
         overflow: visible;
     }
     .nav_child::before, .last_nav_child::before {
@@ -252,7 +246,7 @@ a:link, a:visited, a:active {
     border: dotted tomato .2vw;
     background-color: rgba(112, 70, 70, 0.438);
     backdrop-filter: blur(2px);
-    font-family: var(--main-fancy-font);
+    font-family: var(--main-header-font);
     color: whitesmoke;
 }
 .tribute_box h1 {
@@ -267,7 +261,7 @@ a:link, a:visited, a:active {
     text-align: center;
 }
 .text_flourish {
-    font-family: var(--main-fancy-font);
+    font-family: var(--main-header-font);
     color:tomato;
     list-style-type: none;
     font-size: 4vw;
@@ -322,7 +316,7 @@ mark {
 .quote_line_1_text {
     grid-row: 1 / 3;
     grid-column: 1 / 4;
-    font-family: var(--main-fancy-font);
+    font-family: var(--main-header-font);
     font-size: 3vw;
     color: white;
     display: block;
@@ -334,7 +328,7 @@ mark {
 .quote_line_2_text {
     grid-row:2 / 4;
     grid-column: 4 / 7;
-    font-family: var(--main-fancy-font);
+    font-family: var(--main-header-font);
     font-size: 3vw;
     text-align: left;
     align-self: left;
@@ -428,205 +422,78 @@ mark {
 .book_card_1 {
     z-index: 0;
 }
-.book_image {
+.book_image_1 {
     grid-column: 1 / 4;
     grid-row: 1 / 3;
     justify-self: center;
 }
-.book_image img {
+.book_image_1 img {
     width: 18vw;
     height: auto;
 }
-.book_title  {
+.book_title {
     grid-column: 5 / 8;
     grid-row: 1 / 2;
     display: grid;
     align-content: center;
-    font-family:var(--book-font);
+    font-family:"Dreamwalker";
     color: black;
     font-size: 3.5vw;
     text-align: center;
 }
-.book_details {
+.book_details_1 {
     grid-column: 4 / 9;
     grid-row: 2 / 3;
-    font-family:var(--book-font);
+    font-family:"Dreamwalker";
     color: black;
     font-size: 2vw;
     padding-left: 8%;
 }
-.book_details::before {
+.book_details_1::before {
     content:open-quote;
     display: inline-block;
     position: absolute;
     color:tomato;
     font-size: 5vw;
-    font-family:var(--main-fancy-font);
+    font-family:var(--main-header-font);
     margin-left: -2vw;
     margin-top: -2vw;
 }
-.book_details::after {
+.book_details_1::after {
     content: close-quote "-FF";
     display: inline-block;
     position: absolute;
     color: tomato;
     font-size: 5vw;
-    font-family:var(--main-fancy-font);
+    font-family:var(--main-header-font);
     margin-top: -2vw;
     margin-left: -.75vw;
 }
-.book_card_2 .book_details::after {
-    content: close-quote;
-}
-.book_card_3 .book_details::after {
-    content: close-quote;
-}
-.book_card_3 .book_details {
-    font-size: 1.8vw;
-}
-.book_card_4 .book_details::before {
-    content: "";
-}
-.book_card_4 .book_details::after {
-    content: "";
-}
-.book_card_4 .book_details {
-    font-size: 2.4vw;
-    text-align: center;
-}
-.learn_more {
+.learn_more_1 {
     grid-row: 3 / 4;
     grid-column: 5 / 8;
     font-size: 3vw;
-    font-family: var(--book-font);
+    font-family: "Dreamwalker";
     color: Black;
     text-align: center;
     margin-top: -3%;
 }
-a.learn_more {
+a.learn_more_1 {
     text-decoration: underline dotted tomato;   
 }
-a.learn_more:hover{
+a.learn_more_1:hover{
     transform: scale(1.2,1.2);
     text-decoration-color: green;
 }
 .book_card_2 {
-    background-color: white;
+    background-color: violet;
     z-index: -1;
 }
 .book_card_3 {
-    background-color: white;
+    background-color: rgb(24, 182, 50);
     z-index: -2;
 }
 .book_card_4 {
-    background-color: white;
+    background-color: rgb(17, 46, 99);
     z-index: -3;
-}
-@media screen and (max-width: 900px) {
-    .quote_1_image {
-        display: none;
-    }
-    .quote_line_1_text {
-        grid-column: 1 / 7;
-        grid-row: 1 / 3;
-        font-size: 5vw;
-        text-align: center;
-    }
-    .quote_line_2_text {
-        grid-column: 1 / 7;
-        grid-row: 3 / 4;
-        font-size: 5vw;
-        text-align: center;
-    }
-    .books_grid {
-        grid-column: 1 / 7;
-        padding-top: 3%;
-    }
-    .book_details {
-        padding-left: 0;
-        font-size: 2.5vw;
-    }
-    .book_card_3 .book_details {
-        font-size: 2.5vw;
-    }
-    .learn_more {
-        font-size: 4vw;
-    }
-    .books_grid label {
-        width: 4vw;
-        height: 4vw;
-    }
-    .books_grid input[type="radio"]:checked + label {
-        width: 5vw;
-        height: 4vw;
-        overflow: visible;
-    }
-}
-
-#forrests_life {
-    display: flex;
-    justify-content: center;
-}
-
-h2 {
-    font-family:var(--main-fancy-font);
-    font-size: 4vw;
-    border-bottom: tomato dotted .3vw;
-}
-.life_grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-gap: .25fr;
-    border: forestgreen solid 1px;
-}
-.life_grid_card {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    height: 50vh;
-    width: auto;
-    border: solid thistle 2px;
-}
-.life_grid_pic, .life_grid_title, .life_grid_description, .life_grid_blur {
-    display: grid;
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    justify-self: center;
-    align-content: center;
-}
-.life_grid_blur {
-    width:100%;
-    height: 100%;
-    background-color: rgba(143, 51, 51, 0.15);
-    backdrop-filter: blur(2px);
-    z-index: 0;
-}
-.life_grid_pic {
-    z-index: 1;
-}
-.life_grid_pic img{
-    width: 100%;
-    height: 50vh;
-    overflow: hidden;
-}
-.life_grid_title {
-    font-family: var(--book-font);
-    font-size: 3vw;
-    z-index: 2;
-}
-.life_grid_description {
-    z-index: -1;
-}
-.life_grid_card:hover > .life_grid_blur{
-    display: none;
-} 
-.life_grid_card:hover > .life_grid_pic{
-    display: none;
-} 
-.life_grid_card:hover > .life_grid_title{
-    display: none;
-} 
-.life_grid_card:hover > .life_grid_description {
-    z-index: 3; 
 }
